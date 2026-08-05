@@ -1,6 +1,11 @@
 from llama_cloud import AsyncLlamaCloud
 
-client = AsyncLlamaCloud(api_key="<your-api-key>")
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+
+client = AsyncLlamaCloud(api_key=os.getenv("LLAMA_API_KEY"))
 
 file_obj = await client.files.create(file="./my_document.pdf", purpose="parse")
 

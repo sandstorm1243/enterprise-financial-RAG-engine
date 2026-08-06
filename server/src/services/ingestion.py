@@ -16,4 +16,3 @@ result = await client.parsing.parse(
 )
 
 print(result.markdown_full)
-print(result.markdown_full)

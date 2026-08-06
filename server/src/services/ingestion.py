@@ -7,7 +7,7 @@ load_dotenv()
 
 client = AsyncLlamaCloud(api_key=os.getenv("LLAMA_API_KEY"))
 
-file_obj = await client.files.create(file="./my_document.pdf", purpose="parse")
+file_obj = await client.files.create(file="D:\enterprise-financial-RAG-engine\server\data\PDF Solutions_Typeset Proxy_v2_Host.pdf", purpose="parse")
 
 result = await client.parsing.parse(
     file_id=file_obj.id,
@@ -15,4 +15,5 @@ result = await client.parsing.parse(
     expand=["markdown_full"],
 )
 
+print(result.markdown_full)
 print(result.markdown_full)

@@ -17,12 +17,14 @@
 
 # print(result.markdown_full)
 
-
+#dummy pdf from https://ir.pdf.com/financial-reports
 
 from pathlib import Path
 import asyncio
 import os
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
 from llama_cloud import AsyncLlamaCloud
 
 # Explicitly load .env from the server root

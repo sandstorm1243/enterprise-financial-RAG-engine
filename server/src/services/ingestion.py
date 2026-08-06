@@ -19,12 +19,15 @@
 
 
 
+from pathlib import Path
 import asyncio
 import os
 from dotenv import load_dotenv
 from llama_cloud import AsyncLlamaCloud
 
-load_dotenv()
+# Explicitly load .env from the server root
+env_path = Path(__file__).resolve().parents[2] / ".env"
+load_dotenv(dotenv_path=env_path)
 
 client = AsyncLlamaCloud(api_key=os.getenv("LLAMA_API_KEY"))
 
@@ -38,6 +41,7 @@ async def main():
     result = await client.parsing.parse(
         file_id=file_obj.id,
         tier="agentic",
+        version="latest",
         expand=["markdown_full"],
     )
 

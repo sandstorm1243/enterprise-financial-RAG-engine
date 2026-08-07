@@ -1,6 +1,8 @@
 
 import os
+# pyrefly: ignore [missing-import]
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
 from qdrant_client import QdrantClient
 
 # Load environment variables from .env file
@@ -11,4 +13,4 @@ qdrant_client = QdrantClient(
     api_key=os.getenv("QDRANT_API_KEY"),
 )
 
-print(qdrant_client.get_collections())
+print(qdrant_client.get_collections())
